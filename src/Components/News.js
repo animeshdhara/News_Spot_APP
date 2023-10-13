@@ -337,8 +337,8 @@ export default class News extends Component {
     // console.log("render");
     return (
       <>
-        <div className="container my-4">
-          <h2 className={`text-center text-${this.props.mode === 'dark' ? 'light' : 'dark'}`}>News Spot - Top head lines from {this.string[0].toUpperCase() + this.string.slice(1)}</h2>
+        <div className="container">
+          <h2 style={{marginTop:'60px'}} className={`text-center text-${this.props.mode === 'dark' ? 'light' : 'dark'}`}>News Spot - Top head lines from {this.string[0].toUpperCase() + this.string.slice(1)}</h2>
           {this.state.loading && <Spinner/>}
 
           <InfiniteScroll
