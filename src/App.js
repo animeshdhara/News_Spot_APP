@@ -15,6 +15,7 @@ import {
 export default class App extends Component {
 
   apiKey = process.env.REACT_APP_API_KEY;
+  // apiKey = '00c9c5606f1d451fb810377cca0f5f1a';
 
   constructor(){
     super();
