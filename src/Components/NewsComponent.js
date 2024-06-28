@@ -9,7 +9,7 @@ export class NewsComponent extends Component {
         // console.log(d);
         return (
             <>
-                <div className="card my-3" style={{ width: "18rem" }}>
+                <div className="card my-3" style={{ width: "20rem", height: "25rem" }}>
                     <img src={imageUrl == null ? "https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_1280.jpg" : imageUrl} className="card-img-top" alt="Img loading...." />
                     <div className={`card-body bg-${mode==='dark'?'dark':'light'}`}>
                         <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'80%'}}>

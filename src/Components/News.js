@@ -337,8 +337,8 @@ export default class News extends Component {
     // console.log("render");
     return (
       <>
-        <div className="container">
-          <h2 style={{marginTop:'60px'}} className={`text-center text-${this.props.mode === 'dark' ? 'light' : 'dark'}`}>News Spot - Top head lines from {this.string[0].toUpperCase() + this.string.slice(1)}</h2>
+        <div className="news_container">
+          <h2 style={{marginTop:'3rem'}} className={`text-center text-${this.props.mode === 'dark' ? 'light' : 'dark'}`}>News Spot - Top head lines from {this.string[0].toUpperCase() + this.string.slice(1)}</h2>
           {this.state.loading && <Spinner/>}
 
           <InfiniteScroll
@@ -346,7 +346,8 @@ export default class News extends Component {
             next={this.fetchMoreData}
             hasMore={this.state.articles.length !== this.state.totalPage}
             loader=<Spinner/>
-            height={'100vh'}
+            height={'89vh'}
+            width={'100%'}
             endMessage={
               <p style={{ textAlign: 'center',color:this.props.mode === 'dark'?'white':'black' }}>
                 <b >Yay! You have seen it all</b>
@@ -354,10 +355,10 @@ export default class News extends Component {
             }
           >
             {/* !this.state.loading &&  */}
-            {<div className="row container">
+            {<div className="row">
               {this.state.articles.map((element) => {
                 // console.log(element);
-                return <div className="col-md-4" key={element.name}>
+                return <div className="col-md-3" key={element.name}>
                   <NewsComponent title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author ? element.author : "Unknown"} date={element.publishedAt} source={element.source['name']} mode={this.props.mode} />
                 </div>
               })}
@@ -365,10 +366,6 @@ export default class News extends Component {
 
           </InfiniteScroll>
         </div>
-        {/* <div className="container d-flex justify-content-between">
-          <button disabled={this.state.page <= 1 ? true : false} type="button" className={`btn btn-${this.props.mode === 'dark' ? 'primary' : 'dark'}`} onClick={this.handlePrev}>&larr;Previous</button>
-          <button disabled={this.state.page >= Math.ceil(this.state.totalPage / this.props.pageSize) ? true : false} type="button" className={`btn btn-${this.props.mode === 'dark' ? 'primary' : 'dark'}`} onClick={this.handleNext}>Next&rarr;</button>
-        </div> */}
       </>
     )
   }
