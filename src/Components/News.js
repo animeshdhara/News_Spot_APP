@@ -357,7 +357,7 @@ export default class News extends Component {
           >
             {/* !this.state.loading &&  */}
             {<div className="row">
-              {this.state.articles.map((element) => {
+              {this.state.articles && this.state.articles.map((element) => {
                 // console.log(element);
                 return <div className="col-md-3" key={element.name}>
                   <NewsComponent title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author ? element.author : "Unknown"} date={element.publishedAt} source={element.source['name']} mode={this.props.mode} />
