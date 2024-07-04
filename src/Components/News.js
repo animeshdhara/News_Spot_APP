@@ -345,7 +345,7 @@ export default class News extends Component {
             dataLength={this.state.articles !== undefined?this.state.articles.length:0}
 
             next={this.fetchMoreData}
-            hasMore={this.state.articles.length !== this.state.totalPage}
+            hasMore={this.state.articles && this.state.articles.length !== this.state.totalPage}
             loader=<Spinner/>
             height={'89vh'}
             width={'100%'}
