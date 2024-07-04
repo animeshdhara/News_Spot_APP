@@ -15,7 +15,7 @@ export class NewsComponent extends Component {
                         <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'80%'}}>
                             {source}
                         </span>
-                        <h5 className={`card-title text-${mode === 'dark'?'light':'dark'}`}>{title && title.length > 40 ? title.slice(0, 30) + "..." : title}</h5>
+                        <h5 className={`card-title text-${mode === 'dark'?'light':'dark'}`}>{title!==undefined && title.length > 40 ? title.slice(0, 30) + "..." : title}</h5>
                         <p className={`card-text text-${mode === 'dark'?'light':'dark'}`}>{description && description.length > 50 ? description.slice(0, 50) + "..." : description}</p>
                         <p className={`card-text text-${mode=== 'dark'?'light':'dark'}`}><small className="text-body-secondary">By {author} on {`${d.getDay()}:${d.getMonth()}:${d.getFullYear()} - ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`}</small></p>
                         <Link rel='noreferrer' to={newsUrl} target='_blank' className={`btn btn-sm btn-${mode === 'dark'?'success':'dark'}`}>Read More</Link>
